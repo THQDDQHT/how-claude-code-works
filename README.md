@@ -2,6 +2,8 @@
 
 > Claude Code 源码出来了，赶紧进行分析和学习吧！
 
+**[在线阅读 →](https://windy3f3f3f3f.github.io/how-claude-code-works/#/)**
+
 [English](./README_EN.md)
 
 **不是读代码笔记，是架构抽象。** 本项目从 Claude Code 的 50 万+ 行 TypeScript 源码中，提炼出 11 篇专题文档 + 架构图，帮你用最短路径理解这个生产级编程 Agent 的设计精髓。
