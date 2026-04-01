@@ -6,7 +6,7 @@
 
 [English](./README_EN.md)
 
-Claude Code 是目前使用最广泛的 AI 编程 Agent，也是我认为最好用的AI编程工具（我使用Claude Code已经一年了）。它能理解整个代码仓库、自主执行多步编程任务、安全地运行命令——而这一切背后是 **50 万行 TypeScript 源码**中沉淀的工程智慧（可能也是另一种屎山，最近Claude Code Bug也老多了）。
+Claude Code 是目前使用最广泛的 AI 编程 Agent，也是我认为最好用的AI编程工具（我使用Claude Code已经一年了）。它能理解整个代码仓库、自主执行多步编程任务、安全地运行命令——而这一切背后是 **50 万行 TypeScript 源码**中沉淀的工程智慧。
 
 Anthropic 开源（x）了这份源码。**但 50 万行代码，从哪里开始读？**
 
