@@ -193,6 +193,10 @@ graph TB
 
 欢迎提 Issue 和 PR！如果你发现分析有误或有更好的理解角度，非常欢迎讨论。
 
+## 致谢
+
+感谢 [LINUX DO](https://linux.do/) 社区的支持与讨论。
+
 ## License
 
 MIT
