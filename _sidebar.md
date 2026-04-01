@@ -9,16 +9,20 @@
 - **能力系统**
   - [4. 工具系统](docs/04-tool-system.md)
   - [5. 代码编辑策略](docs/05-code-editing-strategy.md)
-  - [9. Hooks 与可扩展性](docs/09-hooks-extensibility.md)
-  - [10. 多 Agent 架构](docs/10-multi-agent.md)
-  - [11. 记忆与技能系统](docs/11-memory-skills.md)
+  - [6. Hooks 与可扩展性](docs/06-hooks-extensibility.md)
+  - [7. 多 Agent 架构](docs/07-multi-agent.md)
+  - [8. 记忆系统](docs/08-memory-system.md)
+  - [9. 技能系统](docs/09-skills-system.md)
 
 - **基础设施**
-  - [6. 权限与安全](docs/06-permission-security.md)
-  - [7. 用户体验设计](docs/07-user-experience.md)
+  - [10. 权限与安全](docs/10-permission-security.md)
+  - [11. 用户体验设计](docs/11-user-experience.md)
 
 - **构建你自己的**
-  - [8. 最小必要组件](docs/08-minimal-components.md)
+  - [12. 最小必要组件](docs/12-minimal-components.md)
+
+- **参考**
+  - [速查参考](docs/reference.md)
 
 - **相关项目**
   - [claude-code-from-scratch](https://github.com/Windy3f3f3f3f/claude-code-from-scratch)

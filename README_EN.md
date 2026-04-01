@@ -130,12 +130,13 @@ graph TB
 | 3 | [Context Engineering](./docs/03-context-engineering.md) | How to fit the most useful information into a limited context window, full compression strategy details |
 | 4 | [Tool System](./docs/04-tool-system.md) | How 66 tools are registered, dispatched, and concurrency-controlled; how to integrate third-party tools |
 | 5 | [Code Editing Strategy](./docs/05-code-editing-strategy.md) | Why "search-and-replace" over "full file rewrite," how to ensure edit safety |
-| 6 | [Permission & Security](./docs/06-permission-security.md) | The complete 5-layer security system, 23 Bash security checks |
-| 7 | [User Experience](./docs/07-user-experience.md) | Why React for terminal UI, streaming output implementation, terminal interaction details |
-| 8 | [Minimal Components](./docs/08-minimal-components.md) | The minimum modules needed for a coding agent, the evolution path from 500 lines to 500K |
-| 9 | [Hooks & Extensibility](./docs/09-hooks-extensibility.md) | 23 hook events, how to customize Claude Code's behavior without modifying source code |
-| 10 | [Multi-Agent Architecture](./docs/10-multi-agent.md) | Sub-agent, Coordinator, and Swarm — design tradeoffs of three multi-agent modes |
-| 11 | [Memory & Skills](./docs/11-memory-skills.md) | How AI "remembers" your preferences and project context, cross-session learning |
+| 6 | [Hooks & Extensibility](./docs/06-hooks-extensibility.md) | 23 hook events, how to customize Claude Code's behavior without modifying source code |
+| 7 | [Multi-Agent Architecture](./docs/07-multi-agent.md) | Sub-agent, Coordinator, and Swarm — design tradeoffs of three multi-agent modes |
+| 8 | [Memory System](./docs/08-memory-system.md) | 4 memory types, Sonnet semantic recall, background extraction agent, drift defense |
+| 9 | [Skills System](./docs/09-skills-system.md) | 6 skill sources, lazy loading, inline/fork execution, permission model, post-compaction preservation |
+| 10 | [Permission & Security](./docs/10-permission-security.md) | The complete 5-layer security system, 23 Bash security checks |
+| 11 | [User Experience](./docs/11-user-experience.md) | Why React for terminal UI, streaming output implementation, terminal interaction details |
+| 12 | [Minimal Components](./docs/12-minimal-components.md) | The minimum modules needed for a coding agent, the evolution path from 500 lines to 500K |
 
 ## Who should read this?
 
@@ -165,13 +166,13 @@ graph TB
 → Read in order: [Agent Loop](./docs/02-agent-loop.md) → [Context Engineering](./docs/03-context-engineering.md) → [Tool System](./docs/04-tool-system.md)
 
 **Want to build your own AI agent?**
-→ Start with [Minimal Components](./docs/08-minimal-components.md), then check out [claude-code-from-scratch](https://github.com/Windy3f3f3f3f/claude-code-from-scratch)
+→ Start with [Minimal Components](./docs/12-minimal-components.md), then check out [claude-code-from-scratch](https://github.com/Windy3f3f3f3f/claude-code-from-scratch)
 
 **Want to customize Claude Code?**
-→ Read [Hooks & Extensibility](./docs/09-hooks-extensibility.md) + [Memory & Skills](./docs/11-memory-skills.md)
+→ Read [Hooks & Extensibility](./docs/06-hooks-extensibility.md) + [Memory System](./docs/08-memory-system.md) + [Skills System](./docs/09-skills-system.md)
 
 **Care about security?**
-→ Read [Permission & Security](./docs/06-permission-security.md) + [Code Editing Strategy](./docs/05-code-editing-strategy.md)
+→ Read [Permission & Security](./docs/10-permission-security.md) + [Code Editing Strategy](./docs/05-code-editing-strategy.md)
 
 ## Contributing
 

@@ -12,7 +12,7 @@ Anthropic 开源（x）了这份源码。**但 50 万行代码，从哪里开始
 
 这也是我创建这个项目的初衷，我自己也遇到了没有办法阅读这么长的代码项目的问题，我的解决方案是和Claude Code一起读，让他给我写文档配合我读源代码。在此同时，我想把这个过程文档化，就形成了这个项目。
 
-我和Claude Code加班从源码中提炼出 **11 篇专题文档**，覆盖了从核心循环到安全防护的每一个关键设计决策。不管你是想造自己的 AI Agent，还是想更深入地理解和使用 Claude Code，这里都是最短路径（应该？就算不是最短的，我也会不断更新这个项目）。
+我和Claude Code加班从源码中提炼出 **12 篇专题文档**，覆盖了从核心循环到安全防护的每一个关键设计决策。不管你是想造自己的 AI Agent，还是想更深入地理解和使用 Claude Code，这里都是最短路径（应该？就算不是最短的，我也会不断更新这个项目）。
 
 ## 相关项目
 
@@ -24,7 +24,8 @@ Anthropic 开源（x）了这份源码。**但 50 万行代码，从哪里开始
 
 | 日期 | 更新内容 |
 |------|---------|
-| 2026-04-01 | 全部 11 章大幅扩充（篇幅翻倍），补充源码级实现细节、Mermaid 架构图、代码示例 |
+| 2026-04-01 | 拆分记忆与技能为独立章节（11→12 篇），按侧边栏分组重新编号 01-12 |
+| 2026-04-01 | 全部 12 章大幅扩充（篇幅翻倍），补充源码级实现细节、Mermaid 架构图、代码示例 |
 | 2026-04-01 | 同步更新 quick-start 总览页、README 文档目录描述，匹配各章节新增内容 |
 | 2026-03-31 | 新增 3 章：Hooks 与可扩展性、多 Agent 架构、记忆与技能系统 |
 | 2026-03-31 | 充实原有 8 章内容，补充启动流程、MCP 集成、压缩恢复机制等专题 |
@@ -146,12 +147,13 @@ graph TB
 | 3 | [上下文工程](./docs/03-context-engineering.md) | 4 级压缩流水线完整细节、压缩后自动恢复机制（5 文件 + 技能重激活）、提示词缓存策略与缓存断裂检测 |
 | 4 | [工具系统](./docs/04-tool-system.md) | 66 个工具的注册与并发控制、MCP 7 种传输详解、连接状态机、OAuth 2.0 + PKCE 认证流程 |
 | 5 | [代码编辑策略](./docs/05-code-editing-strategy.md) | search-and-replace 为什么比整文件重写更好、唯一性约束与抗幻觉设计、编辑前强制读取的代码级实现 |
-| 6 | [权限与安全](./docs/06-permission-security.md) | 5 层纵深防御体系、tree-sitter AST 分析 + 23 项安全检查、竞速确认机制与 200ms 防误触 |
-| 7 | [用户体验设计](./docs/07-user-experience.md) | 自研 Ink 渲染器架构、Yoga Flexbox 布局、虚拟滚动与对象池优化、Vim 模式 |
-| 8 | [最小必要组件](./docs/08-minimal-components.md) | 7 个最小必要组件框架、最小实现 vs 生产级实现的逐项对照、从 500 行到 50 万行的演进路线 |
-| 9 | [Hooks 与可扩展性](./docs/09-hooks-extensibility.md) | 23+ Hook 事件全景、5 种 Hook 类型、6 阶段执行管道、PermissionRequest 4 种能力、信任模型与安全 |
-| 10 | [多 Agent 架构](./docs/10-multi-agent.md) | 子 Agent 4 种执行模式与 Worktree 隔离、协调器纯编排设计、Swarm 3 种执行后端与信箱通信 |
-| 11 | [记忆与技能系统](./docs/11-memory-skills.md) | 4 种记忆类型与 Sonnet 语义召回、异步预取机制、技能 5 层优先级加载、懒加载与多层提示词替换 |
+| 6 | [Hooks 与可扩展性](./docs/06-hooks-extensibility.md) | 23+ Hook 事件全景、5 种 Hook 类型、6 阶段执行管道、PermissionRequest 4 种能力、信任模型与安全 |
+| 7 | [多 Agent 架构](./docs/07-multi-agent.md) | 子 Agent 4 种执行模式与 Worktree 隔离、协调器纯编排设计、Swarm 3 种执行后端与信箱通信 |
+| 8 | [记忆系统](./docs/08-memory-system.md) | 4 种记忆类型与封闭分类法、Sonnet 语义召回与异步预取、后台记忆提取 Agent、记忆漂移防御、团队记忆 |
+| 9 | [技能系统](./docs/09-skills-system.md) | 6 层技能来源与优先级、懒加载与 Token 预算分配、Inline/Fork 双执行模式、白名单权限模型、压缩后技能保留 |
+| 10 | [权限与安全](./docs/10-permission-security.md) | 5 层纵深防御体系、tree-sitter AST 分析 + 23 项安全检查、竞速确认机制与 200ms 防误触 |
+| 11 | [用户体验设计](./docs/11-user-experience.md) | 自研 Ink 渲染器架构、Yoga Flexbox 布局、虚拟滚动与对象池优化、Vim 模式 |
+| 12 | [最小必要组件](./docs/12-minimal-components.md) | 7 个最小必要组件框架、最小实现 vs 生产级实现的逐项对照、从 500 行到 50 万行的演进路线 |
 
 ## 谁应该读这个？
 
@@ -181,13 +183,13 @@ graph TB
 → 按顺序读 [主循环](./docs/02-agent-loop.md) → [上下文工程](./docs/03-context-engineering.md) → [工具系统](./docs/04-tool-system.md)
 
 **想自己造一个 AI Agent？**
-→ 先读 [最小必要组件](./docs/08-minimal-components.md)，再去看 [claude-code-from-scratch](https://github.com/Windy3f3f3f3f/claude-code-from-scratch)
+→ 先读 [最小必要组件](./docs/12-minimal-components.md)，再去看 [claude-code-from-scratch](https://github.com/Windy3f3f3f3f/claude-code-from-scratch)
 
 **想定制 Claude Code？**
-→ 读 [Hooks 与可扩展性](./docs/09-hooks-extensibility.md) + [记忆与技能系统](./docs/11-memory-skills.md)
+→ 读 [Hooks 与可扩展性](./docs/06-hooks-extensibility.md) + [记忆系统](./docs/08-memory-system.md) + [技能系统](./docs/09-skills-system.md)
 
 **关注安全？**
-→ 读 [权限与安全](./docs/06-permission-security.md) + [代码编辑策略](./docs/05-code-editing-strategy.md)
+→ 读 [权限与安全](./docs/10-permission-security.md) + [代码编辑策略](./docs/05-code-editing-strategy.md)
 
 ## 贡献
 
