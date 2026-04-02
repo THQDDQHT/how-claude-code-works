@@ -11,7 +11,7 @@ Fred Brooks 在《人月神话》中区分了**本质复杂性**（essential com
 - **本质复杂性**：循环调用模型、执行工具、管理上下文——这 7 个组件是任何 coding agent 都必须解决的问题
 - **偶然复杂性**：MCP 协议集成、Vim 模式、OSC 8 超链接、OAuth 认证——这些是生产环境和用户体验驱动的需求
 
-[claude-code-from-scratch](https://github.com/Windy3f3f3f3f/claude-code-from-scratch) 项目正是围绕这个思路构建的：用 ~1300 行代码、7 个源文件，实现一个功能完整的 coding agent。本章的方法是——**从这个最小实现出发，逐组件追溯到 Claude Code 生产代码**，理解每一层复杂性是为了解决什么问题而存在的。
+[claude-code-from-scratch](https://github.com/Windy3f3f3f3f/claude-code-from-scratch) 项目正是围绕这个思路构建的：用 ~3000 行代码、11 个源文件，实现一个功能完整的 coding agent（含记忆、技能、多 Agent、权限规则等进阶能力）。本章的方法是——**从这个最小实现出发，逐组件追溯到 Claude Code 生产代码**，理解每一层复杂性是为了解决什么问题而存在的。
 
 **阅读建议**：
 
@@ -927,9 +927,9 @@ graph LR
 
 ## 12.4 claude-code-from-scratch 项目
 
-[claude-code-from-scratch](https://github.com/Windy3f3f3f3f/claude-code-from-scratch) 项目提供了一个可运行的最小实现（~1300 行核心代码），帮助你：
+[claude-code-from-scratch](https://github.com/Windy3f3f3f3f/claude-code-from-scratch) 项目提供了一个可运行的最小实现（~3000 行核心代码），帮助你：
 
-1. **理解核心机制**：不被 512K 行代码淹没，聚焦于 7 个本质组件
+1. **理解核心机制**：不被 512K 行代码淹没，聚焦于 11 个本质组件
 2. **动手实验**：修改循环逻辑、添加新工具、调整系统提示词
 3. **学习设计决策**：理解每个组件为什么存在、为什么这样实现
 4. **渐进式构建**：从最小版本逐步添加功能，体会每层复杂性的价值
