@@ -29,14 +29,21 @@
       name: 'How Claude Code Works',
       repo: 'https://github.com/Windy3f3f3f3f/how-claude-code-works',
       loadSidebar: true,
+      loadNavbar: true,
       subMaxLevel: 0,
       auto2top: true,
       search: {
         placeholder: '搜索文档...',
         noData: '没有找到结果',
         depth: 3,
+        pathNamespaces: ['/', '/en'],
       },
       coverpage: false,
+      alias: {
+        '/en/(.*)': '/en/$1',
+        '/en/_sidebar.md': '/en/_sidebar.md',
+        '/en/_navbar.md': '/en/_navbar.md',
+      },
       pagination: {
         previousText: '上一篇',
         nextText: '下一篇',
