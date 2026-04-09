@@ -2,24 +2,6 @@
 
 # How Claude Code Works
 
-**深入解读当前最成功的 AI 编程 Agent 的源码架构**
-
-[![GitHub stars](https://img.shields.io/github/stars/Windy3f3f3f3f/how-claude-code-works?style=flat-square&logo=github)](https://github.com/Windy3f3f3f3f/how-claude-code-works)
-[![GitHub forks](https://img.shields.io/github/forks/Windy3f3f3f3f/how-claude-code-works?style=flat-square&logo=github)](https://github.com/Windy3f3f3f3f/how-claude-code-works/fork)
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=flat-square)](./LICENSE)
-[![TypeScript](https://img.shields.io/badge/Source-TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white)](https://github.com/anthropics/claude-code)
-[![Docs](https://img.shields.io/badge/Docs-12_chapters-orange?style=flat-square)](#专题深入)
-
-<br/>
-
-[**📘 在线阅读文档 →**](https://windy3f3f3f3f.github.io/how-claude-code-works/#/)
-&nbsp;&nbsp;|&nbsp;&nbsp;
-[English](./README_EN.md)
-
-<br/>
-
-> 🛠️ **想动手造一个？** 配套项目 **[Claude Code From Scratch](https://github.com/Windy3f3f3f3f/claude-code-from-scratch)** — ~3000 行 TypeScript，11 章分步教程，从零构建你自己的 Claude Code
-
 </div>
 
 ---
@@ -31,10 +13,6 @@ Anthropic 开源（x）了这份源码。**但 50 万行代码，从哪里开始
 这也是我们创建这个项目的初衷——我们都遇到了没有办法阅读这么庞大代码项目的问题，解决方案是和 Claude Code 一起读，让它写文档配合我们理解源代码。在此同时，我们想把这个过程文档化，就形成了这个项目。
 
 我们和 Claude Code 加班从源码中提炼出 **14 篇专题文档**，覆盖了从核心循环到安全防护的每一个关键设计决策。不管你是想造自己的 AI Agent，还是想更深入地理解和使用 Claude Code，这里都是最短路径（应该？就算不是最短的，我们也会不断更新这个项目）。
-
-<div align="center">
-  <img alt="在线阅读文档网站截图" src="./assets/architecture.png" width="800" />
-</div>
 
 ## 🏗️ 系统架构
 
@@ -139,108 +117,19 @@ Claude Code 支持三种多 Agent 模式：
 
 ## 📚 专题深入
 
-| # | 文档 | 你会了解到 |
-|---|------|-----------|
-| 1 | [概述](./docs/01-overview.md) | 技术选型背后的思考（为什么 Bun/React/Zod）、6 条核心设计原则、9 阶段 235ms 启动流程、数据流全景 |
-| 2 | [系统主循环](./docs/02-agent-loop.md) | Agent 循环的双层架构、7 种 Continue Sites 故障恢复、工具预执行、StreamingToolExecutor 并发机制 |
-| 3 | [上下文工程](./docs/03-context-engineering.md) | 4 级压缩流水线完整细节、压缩后自动恢复机制（5 文件 + 技能重激活）、提示词缓存策略与缓存断裂检测 |
-| 4 | [工具系统](./docs/04-tool-system.md) | 66 个工具的注册与并发控制、MCP 7 种传输详解、连接状态机、OAuth 2.0 + PKCE 认证流程 |
-| 5 | [代码编辑策略](./docs/05-code-editing-strategy.md) | search-and-replace 为什么比整文件重写更好、唯一性约束与抗幻觉设计、编辑前强制读取的代码级实现 |
-| 6 | [Hooks 与可扩展性](./docs/06-hooks-extensibility.md) | 23+ Hook 事件全景、5 种 Hook 类型、6 阶段执行管道、PermissionRequest 4 种能力、信任模型与安全 |
-| 7 | [多 Agent 架构](./docs/07-multi-agent.md) | 子 Agent 4 种执行模式与 Worktree 隔离、协调器纯编排设计、Swarm 3 种执行后端与信箱通信 |
-| 8 | [记忆系统](./docs/08-memory-system.md) | 4 种记忆类型与封闭分类法、Sonnet 语义召回与异步预取、后台记忆提取 Agent、记忆漂移防御、团队记忆 |
-| 9 | [技能系统](./docs/09-skills-system.md) | 6 层技能来源与优先级、懒加载与 Token 预算分配、Inline/Fork 双执行模式、白名单权限模型、压缩后技能保留 |
-| 10 | [Plan 模式](./docs/10-plan-mode.md) | 两条进入路径、5 阶段与迭代双工作流、附件节流机制、Phase 4 四种实验变体、计划文件管理与恢复、审批与权限恢复 |
-| 11 | [权限与安全](./docs/11-permission-security.md) | 5 层纵深防御体系、tree-sitter AST 分析 + 23 项安全检查、竞速确认机制与 200ms 防误触 |
-| 12 | [用户体验设计](./docs/12-user-experience.md) | 自研 Ink 渲染器架构、Yoga Flexbox 布局、虚拟滚动与对象池优化、Vim 模式 |
-| 13 | [最小必要组件](./docs/13-minimal-components.md) | 7 个最小必要组件框架、最小实现 vs 生产级实现的逐项对照、从 500 行到 50 万行的演进路线 |
-| 14 | [系统提示词设计](./docs/14-system-prompt-design.md) | 7 层递进式提示词架构、反模式接种与负面清单设计、爆炸半径风险框架、内外分层变体、7 条 Agent 提示词设计原则 |
-
-## 🎯 谁应该读这个？
-
-| 你是 | 你能获得 |
-|------|---------|
-| 想做 AI Agent 产品的开发者 | 一个经过百万用户验证的架构参考，少走弯路 |
-| Claude Code 用户 | 理解它为什么这样工作，学会用 Hooks 和 CLAUDE.md 深度定制 |
-| 对 AI 安全感兴趣的人 | 生产级 AI 系统的安全设计实战，不是论文里的理论 |
-| 学生或 AI 研究者 | 大规模工程实践的第一手材料，比任何教科书都真实 |
-
-## 📊 关键数据
-
-| 指标 | 数值 |
-|------|------|
-| 源码总行数 | 512,000+ |
-| TypeScript 文件 | 1,884 |
-| 内置工具 | 66+ |
-| 压缩流水线级数 | 4 级 |
-| 权限防御层数 | 5 层 |
-
-## 🗺️ 阅读建议
-
-**只有 10 分钟？**
-→ 读 [快速入门](./docs/quick-start.md)
-
-**想理解核心原理？**
-→ 按顺序读 [主循环](./docs/02-agent-loop.md) → [上下文工程](./docs/03-context-engineering.md) → [工具系统](./docs/04-tool-system.md)
-
-**想自己造一个 AI Agent？**
-→ 先读 [最小必要组件](./docs/13-minimal-components.md)，然后跟着 **[claude-code-from-scratch](https://github.com/Windy3f3f3f3f/claude-code-from-scratch)** 的 11 章教程动手实现——~3000 行代码，每一步都对照源码讲解
-
-**想定制 Claude Code？**
-→ 读 [Hooks 与可扩展性](./docs/06-hooks-extensibility.md) + [记忆系统](./docs/08-memory-system.md) + [技能系统](./docs/09-skills-system.md)
-
-**关注安全？**
-→ 读 [权限与安全](./docs/11-permission-security.md) + [代码编辑策略](./docs/05-code-editing-strategy.md)
-
-## 🤝 贡献者
-
-| <img src="https://github.com/Windy3f3f3f3f.png" width="60" /> | <img src="https://github.com/davidweidawang.png" width="60" /> | <img src="./assets/kaibo.jpg" width="60" /> |
-|:---:|:---:|:---:|
-| [@Windy3f3f3f3f](https://github.com/Windy3f3f3f3f) | [@davidweidawang](https://github.com/davidweidawang) | [Kaibo Huang](https://scholar.google.com/citations?user=C7B5X5IAAAAJ&hl=zh-CN) |
-
-欢迎提 Issue 和 PR！如果你发现分析有误或有更好的理解角度，非常欢迎讨论。
-
-## 🙏 致谢
-
-感谢 [LINUX DO](https://linux.do/) 社区的支持与讨论。
-
-## 💬 更多交流
-
-<div align="center">
-
-**加入 AI Agent 工坊 交流群**
-
-<img src="./assets/qq.jpg" width="280" alt="QQ 群二维码" />
-
-QQ 群号：**1090526244**
-
-</div>
-
-## 📈 Star History
-
-<div align="center">
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=Windy3f3f3f3f/how-claude-code-works&type=Date&theme=dark" />
-  <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=Windy3f3f3f3f/how-claude-code-works&type=Date" />
-  <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=Windy3f3f3f3f/how-claude-code-works&type=Date" width="600" />
-</picture>
-</div>
-
-## 📝 更新记录
-
-| 日期 | 更新内容 |
-|------|---------|
-| 2026-04-03 | 新增第 14 章：系统提示词设计哲学，深入分析提示词内容的设计原理与工程实践 |
-| 2026-04-03 | 新增暗色模式、阅读进度条、回到顶部按钮、上下文感知语言切换等 UI 优化 |
-| 2026-04-03 | 完成全部 13 篇文档的英文翻译，支持中英双语切换 |
-| 2026-04-01 | 拆分记忆与技能为独立章节（11→12 篇），按侧边栏分组重新编号 01-12 |
-| 2026-04-01 | 全部 12 章大幅扩充（篇幅翻倍），补充源码级实现细节、Mermaid 架构图、代码示例 |
-| 2026-04-01 | 同步更新 quick-start 总览页、README 文档目录描述，匹配各章节新增内容 |
-| 2026-03-31 | 新增 3 章：Hooks 与可扩展性、多 Agent 架构、记忆与技能系统 |
-| 2026-03-31 | 充实原有 8 章内容，补充启动流程、MCP 集成、压缩恢复机制等专题 |
-| 2026-03-31 | 上线 Docsify 文档站点，支持搜索、Mermaid 渲染、章节导航 |
-| 2026-03-31 | 初始发布：8 篇核心架构分析文档 |
-
-## 📄 License
-
-MIT
+| #   | 文档                                                 | 你会了解到                                                                                                 |
+| --- | ---------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
+| 1   | [概述](./docs/01-overview.md)                        | 技术选型背后的思考（为什么 Bun/React/Zod）、6 条核心设计原则、9 阶段 235ms 启动流程、数据流全景            |
+| 2   | [系统主循环](./docs/02-agent-loop.md)                | Agent 循环的双层架构、7 种 Continue Sites 故障恢复、工具预执行、StreamingToolExecutor 并发机制             |
+| 3   | [上下文工程](./docs/03-context-engineering.md)       | 4 级压缩流水线完整细节、压缩后自动恢复机制（5 文件 + 技能重激活）、提示词缓存策略与缓存断裂检测            |
+| 4   | [工具系统](./docs/04-tool-system.md)                 | 66 个工具的注册与并发控制、MCP 7 种传输详解、连接状态机、OAuth 2.0 + PKCE 认证流程                         |
+| 5   | [代码编辑策略](./docs/05-code-editing-strategy.md)   | search-and-replace 为什么比整文件重写更好、唯一性约束与抗幻觉设计、编辑前强制读取的代码级实现              |
+| 6   | [Hooks 与可扩展性](./docs/06-hooks-extensibility.md) | 23+ Hook 事件全景、5 种 Hook 类型、6 阶段执行管道、PermissionRequest 4 种能力、信任模型与安全              |
+| 7   | [多 Agent 架构](./docs/07-multi-agent.md)            | 子 Agent 4 种执行模式与 Worktree 隔离、协调器纯编排设计、Swarm 3 种执行后端与信箱通信                      |
+| 8   | [记忆系统](./docs/08-memory-system.md)               | 4 种记忆类型与封闭分类法、Sonnet 语义召回与异步预取、后台记忆提取 Agent、记忆漂移防御、团队记忆            |
+| 9   | [技能系统](./docs/09-skills-system.md)               | 6 层技能来源与优先级、懒加载与 Token 预算分配、Inline/Fork 双执行模式、白名单权限模型、压缩后技能保留      |
+| 10  | [Plan 模式](./docs/10-plan-mode.md)                  | 两条进入路径、5 阶段与迭代双工作流、附件节流机制、Phase 4 四种实验变体、计划文件管理与恢复、审批与权限恢复 |
+| 11  | [权限与安全](./docs/11-permission-security.md)       | 5 层纵深防御体系、tree-sitter AST 分析 + 23 项安全检查、竞速确认机制与 200ms 防误触                        |
+| 12  | [用户体验设计](./docs/12-user-experience.md)         | 自研 Ink 渲染器架构、Yoga Flexbox 布局、虚拟滚动与对象池优化、Vim 模式                                     |
+| 13  | [最小必要组件](./docs/13-minimal-components.md)      | 7 个最小必要组件框架、最小实现 vs 生产级实现的逐项对照、从 500 行到 50 万行的演进路线                      |
+| 14  | [系统提示词设计](./docs/14-system-prompt-design.md)  | 7 层递进式提示词架构、反模式接种与负面清单设计、爆炸半径风险框架、内外分层变体、7 条 Agent 提示词设计原则  |
